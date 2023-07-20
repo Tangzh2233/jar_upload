@@ -2,14 +2,14 @@
     <mirrors>
         <mirror>
             <id>mirror</id>
-            <mirrorOf>*,!alipay-release,!alipay-snapshot</mirrorOf>
+            <mirrorOf>*,!maven-release,!maven-snapshot</mirrorOf>
             <name>mirror</name>
             <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
         </mirror>
     </mirrors>
     <servers>
         <server>
-            <id>alipay-snapshot</id>
+            <id>maven-snapshot</id>
             <username>${username}</username>
             <password>${userpassword}</password>
             <configuration>
@@ -21,7 +21,7 @@
             </configuration>
         </server>
         <server>
-            <id>alipay-release</id>
+            <id>maven-release</id>
             <username>${username}</username>
             <password>${userpassword}</password>
             <configuration>
@@ -38,15 +38,15 @@
             <id>dev</id>
             <properties>
               <altSnapshotDeploymentRepository>
-                alipay-snapshot::default::https://artifacts.cloud.alipay.com/artifactory/repositories/${tenant}/maven-snapshot/
+                maven-snapshot::default::https://artifacts.cloud.alipay.com/artifactory/repositories/${tenant}/maven-snapshot/
               </altSnapshotDeploymentRepository>
               <altReleaseDeploymentRepository>
-                alipay-release::default::https://artifacts.cloud.alipay.com/artifactory/repositories/${tenant}/maven-release/
+                maven-release::default::https://artifacts.cloud.alipay.com/artifactory/repositories/${tenant}/maven-release/
               </altReleaseDeploymentRepository>
-						</properties>
+            </properties>
             <repositories>
                 <repository>
-                    <id>alipay-snapshot</id>
+                    <id>maven-snapshot</id>
                     <releases>
                         <enabled>false</enabled>
                     </releases>
@@ -56,7 +56,7 @@
                     <url>https://artifacts.cloud.alipay.com/artifactory/repositories/${tenant}/maven-snapshot/</url>
                 </repository>
                 <repository>
-                    <id>alipay-release</id>
+                    <id>maven-release</id>
                     <releases>
                         <enabled>true</enabled>
                     </releases>
