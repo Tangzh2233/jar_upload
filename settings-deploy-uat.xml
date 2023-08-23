@@ -1,0 +1,176 @@
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+<?xml version="1.0" encoding="UTF-8"?><settings>
+    <mirrors>
+      <mirror>
+        <id>mirror</id>
+        <name>mirror</name>
+        <mirrorOf>*,!maven-snapshot,!maven-release</mirrorOf>
+        <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+      </mirror>
+    </mirrors>
+    <servers>
+      <server>
+        <id>maven-snapshot</id>
+        <username>2088542623516093</username>
+        <password>3e221e696d5e429d91cc169593df0b89</password>
+        <configuration>
+          <httpConfiguration>
+            <get>
+              <usePreemptive>true</usePreemptive>
+            </get>
+          </httpConfiguration>
+        </configuration>
+      </server>
+      <server>
+        <id>maven-release</id>
+        <username>2088542623516093</username>
+        <password>3e221e696d5e429d91cc169593df0b89</password>
+        <configuration>
+          <httpConfiguration>
+            <get>
+              <usePreemptive>true</usePreemptive>
+            </get>
+          </httpConfiguration>
+        </configuration>
+      </server>
+    </servers>
+    <profiles>
+      <profile>
+        <id>dev</id>
+        <repositories>
+          <repository>
+            <id>maven-snapshot</id>
+            <releases>
+              <enabled>false</enabled>
+            </releases>
+            <snapshots>
+              <enabled>true</enabled>
+            </snapshots>
+            <url>https://tartifacts.run.alipay.net/artifactory/repositories/2088542623516093/maven-snapshot/</url>
+          </repository>
+          <repository>
+            <id>maven-release</id>
+            <releases>
+              <enabled>true</enabled>
+            </releases>
+            <snapshots>
+              <enabled>false</enabled>
+            </snapshots>
+            <url>https://tartifacts.run.alipay.net/artifactory/repositories/2088542623516093/maven-release/</url>
+          </repository>
+        </repositories>
+        <pluginRepositories>
+          <pluginRepository>
+            <id>plugin-snapshot</id>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+              <enabled>false</enabled>
+            </releases>
+            <snapshots>
+              <enabled>true</enabled>
+            </snapshots>
+          </pluginRepository>
+          <pluginRepository>
+            <id>plugin-release</id>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+              <enabled>true</enabled>
+            </releases>
+            <snapshots>
+              <enabled>false</enabled>
+            </snapshots>
+          </pluginRepository>
+        </pluginRepositories>
+      </profile>
+    </profiles>
+    <activeProfiles>
+      <activeProfile>dev</activeProfile>
+    </activeProfiles>
+  </settings>
